@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Proxy User</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <style>
+    * {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+    body {
+      background: #f5f7fa;
+      min-height: 100vh;
+    }
+    .navbar-custom {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+      margin-bottom: 2rem;
+    }
+    .navbar-custom h4 {
+      color: white;
+      font-weight: 600;
+      margin: 0;
+    }
+    .main-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border: 1px solid #e9ecef;
+    }
+    .form-label {
+      font-weight: 500;
+      color: #495057;
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
+      border-radius: 8px;
+      border: 1px solid #ced4da;
+      padding: 0.625rem 0.75rem;
+    }
+    .form-control:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    }
+    .btn-success {
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+      padding: 0.75rem 2rem;
+    }
+    .btn-success:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(17, 153, 142, 0.3);
+    }
+  </style>
+</head>
+<body>
+<div class="navbar-custom">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <a href="/" class="btn btn-light btn-sm"><i class="bi bi-arrow-left me-2"></i>Back</a>
+      <h4 class="mb-0"><i class="bi bi-plus-circle me-2"></i>Create Proxy User</h4>
+      <div></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="main-card p-5">
+    
+    <form method="post" action="/create">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label"><i class="bi bi-person me-2"></i>Username</label>
+          <input class="form-control" name="username" required placeholder="Enter username">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label"><i class="bi bi-key me-2"></i>Password</label>
+          <input class="form-control" name="password" type="password" required placeholder="Enter password">
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label"><i class="bi bi-hdd-network me-2"></i>Port</label>
+          <input class="form-control" name="port" value="3128" required>
+          <small class="text-muted">Port range: 1024-65535</small>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label"><i class="bi bi-diagram-3 me-2"></i>Proxy Type</label>
+          <select class="form-control" name="proxy_type">
+            <option value="both" selected>Both HTTP & SOCKS5</option>
+            <option value="http">HTTP Only</option>
+            <option value="socks5">SOCKS5 Only</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label"><i class="bi bi-download me-2"></i>Download Limit (Mbps)</label>
+          <input class="form-control" name="dl_limit" value="0" type="number" step="0.1" min="0">
+          <small class="text-muted">0 = unlimited</small>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label"><i class="bi bi-upload me-2"></i>Upload Limit (Mbps)</label>
+          <input class="form-control" name="ul_limit" value="0" type="number" step="0.1" min="0">
+          <small class="text-muted">0 = unlimited</small>
+        </div>
+      </div>
+      
+      <div class="d-grid gap-2">
+        <button class="btn btn-success btn-lg" type="submit">
+          <i class="bi bi-check-circle me-2"></i>Create Proxy User
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

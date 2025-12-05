@@ -1,0 +1,15 @@
+{
+  "974919a5-e22d-473f-b612-70ce720fad97": {
+    "id": "974919a5-e22d-473f-b612-70ce720fad97",
+    "username": "1",
+    "password": "1",
+    "port": 3128,
+    "proxy_type": "both",
+    "created": "2025-12-05T04:34:56.636293Z",
+    "dl_limit": 200.0,
+    "ul_limit": 200.0,
+    "last_speed": 3.94,
+    "last_upload": 47.98,
+    "last_ping": 106.81
+  }
+}
